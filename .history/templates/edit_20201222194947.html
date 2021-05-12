@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit
+{% endblock %}
+
+{% block main %}
+
+<div class="card mb-3" style="max-width: 740px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1068&q=80" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">NOTES</h5>
+          <div>
+            <form action="/<note_id>/edit" method="POST">
+              <textarea name="title" id="" cols="30" rows="2" placeholder="title" type="text" ></textarea>
+              <textarea name="notes" id="" cols="30" rows="10" placeholder="notes" type="text"></textarea>
+              <button class="btn btn-primary" type="submit">Save Notes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit
+{% endblock %}
+
+{% block main %}
+
+
+    
+
+      <h2 style="margin: auto; text-align: center; padding-bottom: 20px;">
+        Edit Note 
+      </h2>
+    <div class="form-floating">
+      {% for item in notes %}
+      <form action="/{{item[0]}}/edit" method="POST">
+        <textarea class="form-control" name="title" cols="30" rows="2" placeholder="title" type="text" >{{item[1]}}</textarea> 
+        <br>
+        <textarea class="form-control" name="notes" cols="30" rows="7" placeholder="notes" type="text">{{item[2]}}</textarea>  
+        <br>
+        <button class="btn btn-primary bg-dark" type="submit">Save Notes</button>
+      </form>
+      {% endfor %}
+    </div>
+     
+
+
+{% endblock %}

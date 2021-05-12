@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Notes
+{% endblock %}
+
+{% block main %}
+
+<div class="my_notes">
+  {% for note in notes %}
+
+    <div class="card" style="width: 39rem; background-color: rgb(195, 226, 226);">
+      <div class="card-body">
+  
+        <h5 class="card-title">{{note[1]}}</h5>
+        <p class="card-text">{{note[2]}}</p>
+        <a href="/{{note[0]}}/edit" class="btn btn-primary">Edit</a>
+        <a href="/{{note[0]}}/delete" class="btn btn-primary">Delete</a>
+  
+      </div> 
+  </div>
+
+{% endfor %}
+</div>
+
+
+
+{% endblock %}

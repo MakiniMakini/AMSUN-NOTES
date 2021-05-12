@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block main %}
+
+
+<section class="about">
+    <div class="header-content">
+        <div class="inner">
+            {% if session.user_id %}
+            <h1 class="cursive">Welcome, Medical Student Notes</h1>
+            <h4>An easy way to watch Youtube Videos and save notes</h4>
+            <hr>
+                <a href="https://www.youtube.com" target="blank"  class="btn btn-primary btn-xl">Search Youtube</a> &nbsp; <a href="/home" class="btn btn-primary btn-xl page-scroll">Get Started</a>   
+            {% else %}
+                <h1 class="cursive">Amsun Notes</h1>
+                <hr>
+                <a href="/login" class="btn btn-primary btn-xl page-scroll">Get Started</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+
+
+<footer id="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6 col-sm-3 column">
+                <h4>Study Resources</h4>
+                <ul class="list-unstyled">
+                    <li><a href="https://www.pdfdrive.com/category/45" target="blank">Books</a></li>
+                    <li><a href="https://www.youtube.com/c/osmosis/videos" target="blank">Videos</a></li>
+                    <li><a href="http://www.freemedicaljournals.com" target="blank">Journals</a></li>
+                    <li><a href="http://www.medscape.com" target="blank">Medscape</a></li>
+                    <li><a href="https://www.youtube.com/user/armandohasudungan/videos" target="blank">Others</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-6 col-sm-3 column">
+                <h4>About</h4>
+                <ul class="list-unstyled">
+                    <li><a href="mailto:brianmakini@gmail.com">Contact Us</a></li>
+                    <li><a href="https://github.com/MakiniMakini" target="blank">Github</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms &amp; Conditions</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-3 column">
+                <h4>Stay Posted</h4>
+                <form>
+                    <div class="form-group">
+                      <input type="text" class="form-control-email" title="No spam, we promise!" placeholder="Feature disabled">
+                    </div>
+                    <div class="form-group">
+                      <button class="btn btn-primary" data-toggle="modal" data-target="#alertModal" type="button">Subscribe for updates</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-12 col-sm-3 text-right">
+                <h4>Follow</h4>
+                <ul class="list-inline">
+                  <li><a rel="nofollow" href="" title="Twitter"><i class="icon-lg ion-social-twitter-outline"></i></a>&nbsp;</li>
+                  <li><a rel="nofollow" href="" title="Facebook"><i class="icon-lg ion-social-facebook-outline"></i></a>&nbsp;</li>
+                  <li><a rel="nofollow" href="" title="Dribble"><i class="icon-lg ion-social-dribbble-outline"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <br/>
+        <span class="pull-right text-muted small"><a href="#">Med Notes</a> ©Makini Makini</span>
+    </div>
+</footer>
+
+<!--scripts loaded here -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/wow.js"></script>
+<script src="/js/scripts.js"></script>
+
+
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Main
+{% endblock %}
+
+{% block main %}
+<div class="container">
+  <div class="row">
+
+
+    <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+      <h2 style="margin: auto; text-align: center;">
+        New Note 
+      </h2>
+          <div>
+            <form action="/notes" method="POST">
+              <label for="title">Title:</label> 
+              <textarea name="title" id="" cols="30" rows="2" placeholder="title" type="text" ></textarea>
+              <br>
+              <label for="notes">Notes:</label> 
+              <textarea name="notes" id="" cols="30" rows="10" placeholder="notes" type="text"></textarea>
+              <br>
+              <button class="btn btn-primary" type="submit">Save Notes</button>
+            </form>
+          </div>
+     </div>
+  
+  
+    <div class=" col-lg-6 myIframe order-first">
+          <iframe id="existing-iframe-example"
+              width="640" height="360"
+              src="https://images.unsplash.com/photo-1508873699372-7aeab60b44ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=60"
+              frameborder="0"
+              style="border: solid 4px #f72905"
+          ></iframe>
+          <div style="align-items: center;">
+            <input type="text" class="form-control" id="userInput" placeholder="Enter youtube link" style="padding: 0;"> 
+            <br>
+            <button type="button" onclick="searchVideo();" class="btn btn-danger">Search video</button>
+          </div>
+    </div>
+  
+  
+  </div>
+</div>
+
+
+<!-- API youtube script to search video -->
+
+<script type="text/javascript">
+function searchVideo(){
+  var userUrl = document.getElementById('userInput').value
+
+  function getId(url) {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+
+    return (match && match[2].length === 11)
+      ? match[2]
+      : null;
+  }
+
+  const videoId = getId(userUrl)
+
+  document.getElementById("existing-iframe-example").src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1`
+
+
+  var tag = document.createElement('script');
+  tag.id = 'iframe-demo';
+  tag.src = 'https://www.youtube.com/iframe_api';
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('existing-iframe-example', {
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+    });
+  }
+  function onPlayerReady(event) {
+    document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
+  }
+  function changeBorderColor(playerStatus) {
+    var color;
+    if (playerStatus == -1) {
+      color = "#37474F"; // unstarted = gray
+    } else if (playerStatus == 0) {
+      color = "#FFFF00"; // ended = yellow
+    } else if (playerStatus == 1) {
+      color = "#33691E"; // playing = green
+    } else if (playerStatus == 2) {
+      color = "#DD2C00"; // paused = red
+    } else if (playerStatus == 3) {
+      color = "#AA00FF"; // buffering = purple
+    } else if (playerStatus == 5) {
+      color = "#FF6DOO"; // video cued = orange
+    }
+    if (color) {
+      document.getElementById('existing-iframe-example').style.borderColor = color;
+    }
+  }
+  function onPlayerStateChange(event) {
+    changeBorderColor(event.data);
+  }
+  }
+ 
+</script>
+
+{% endblock %}

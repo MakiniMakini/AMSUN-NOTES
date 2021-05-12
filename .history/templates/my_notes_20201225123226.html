@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Notes
+{% endblock %}
+
+{% block main %}
+
+{% for note in notes %}
+
+<div class="align-items-center">
+  <div class="card" style="width: 39rem;">
+    <div class="card-body">
+
+      <h5 class="card-title">{{note[1]}}</h5>
+      <p class="card-text">{{note[2]}}</p>
+      <a href="/{{note[0]}}/edit" class="btn btn-primary">Edit</a>
+      <a href="/{{note[0]}}/delete" class="btn btn-primary">Delete</a>
+
+    </div> 
+</div>
+</div>
+
+{% endfor %}
+
+
+{% endblock %}

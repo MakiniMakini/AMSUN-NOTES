@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit
+{% endblock %}
+
+{% block main %}
+
+
+      <div class="notes_form">
+          <div>
+            {% for item in notes %}
+
+            <form action="/{{item[0]}}/edit" method="POST">
+              <textarea name="title" id="" cols="30" rows="2" placeholder="title" type="text" >{{item[1]}}</textarea> &nbsp; <textarea name="notes" id="" cols="30" rows="10" placeholder="notes" type="text">{{item[2]}}</textarea>
+              <button class="btn btn-primary bg-dark" type="submit">Save Notes</button>
+            </form>
+
+            {% endfor %}
+
+      </div>
+  </div>
+
+
+
+
+{% endblock %}

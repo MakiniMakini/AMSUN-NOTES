@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Notes
+{% endblock %}
+
+{% block main %}
+
+{% for item in notes %}
+<div class="card" style="width: 39rem;">
+    <div class="card-body">
+
+      <h5 class="card-title">{{item[0]}}</h5>
+      <p class="card-text">{{item[1]}}</p>
+      <a href="/my_notes/{{item[0]}}/edit">Edit</a>
+      <a href="/delete" class="btn btn-primary">Delete</a>
+
+    </div> 
+</div>
+
+
+{% endfor %}
+
+
+{% endblock %}

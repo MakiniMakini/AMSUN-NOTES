@@ -1,0 +1,89 @@
+nav .navbar-brand {
+	/* size for brand */
+	font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .blue {
+	color: #537fbe;
+}
+nav .navbar-brand .red {
+	color: #ea433b;
+}
+nav .navbar-brand .yellow {
+	color: #f5b82e;
+}
+nav .navbar-brand .green {
+	color: #2e944b;
+}
+
+main .form-control {
+	/* center form controls */
+	display: inline-block;
+
+	/* override Bootstrap's 100% width for form controls */
+	width: auto;
+}
+
+main {
+	/* scroll horizontally as needed */
+	overflow-x: auto;
+
+	/* center contents */
+	text-align: center;
+}
+
+main img {
+	/* constrain images on small screens */
+	max-width: 100%;
+}
+
+/* Split the screen in half */
+.split {
+	height: 100%;
+	width: 50%;
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	overflow-x: hidden;
+	padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+	left: 0;
+	background-color: #111;
+}
+
+/* Control the right side */
+.right {
+	right: 0;
+	background-color: rgb(121, 95, 95);
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+	width: 150px;
+	border-radius: 50%;
+}
+
+textarea {
+	font-family: monospace;
+}
+
+#land {
+	z-index: -1;
+}
+#images {
+	position: absolute;
+	z-index: 1;
+}

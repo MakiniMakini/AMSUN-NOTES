@@ -1,0 +1,135 @@
+nav .navbar-brand {
+	/* size for brand */
+	font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .blue {
+	color: #537fbe;
+}
+nav .navbar-brand .red {
+	color: #ea433b;
+}
+nav .navbar-brand .yellow {
+	color: #f5b82e;
+}
+nav .navbar-brand .green {
+	color: #2e944b;
+}
+
+.navbar .nav-link {
+	color: whitesmoke !important;
+}
+
+main .form-control {
+	/* center form controls */
+	display: inline-block;
+
+	/* override Bootstrap's 100% width for form controls */
+	width: auto;
+}
+
+main {
+	/* scroll horizontally as needed */
+	overflow-x: auto;
+
+	/* center contents */
+	text-align: center;
+}
+
+main img {
+	/* constrain images on small screens */
+	max-width: 100%;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+	width: 150px;
+	border-radius: 50%;
+}
+
+textarea {
+	font-family: monospace;
+}
+
+.section_name {
+	text-align: center;
+	padding: 0;
+}
+
+.form-form {
+	text-align: center;
+	padding-top: 10vh;
+}
+.btn:focus {
+	outline: none !important;
+}
+
+.form-control-email {
+	text-align: left;
+	display: block;
+	width: 50%;
+	height: 35px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #eee;
+	background-color: #36333d;
+	background-image: none;
+	border: 1px solid #36333d;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-control-email:focus {
+	outline: none;
+}
+
+.my_notes {
+	margin: auto;
+	align-content: center;
+	padding-top: 2vh;
+}
+
+.my_notes .card {
+	align-content: center;
+	margin: auto;
+}
+
+textarea {
+	background-color: #a3462f;
+	padding: 5px;
+	columns: red;
+}
+
+textarea:focus {
+	background-color: #2f2d33;
+	outline: none;
+}
+
+.notes_form {
+	margin: auto;
+	align-items: center;
+	align-content: center;
+}
+.navbar-toggler:focus {
+	outline: none;
+}
+.myIframe {
+	position: relative;
+	padding-bottom: 65.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch; //<<--- THIS IS THE KEY
+}
+.myIframe iframe {
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.notes-btn {
+	margin: auto !important;
+	align-items: center !important;
+	display: block !important;
+}
